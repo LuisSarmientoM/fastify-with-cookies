@@ -13,7 +13,7 @@ async function bootstrap() {
     new FastifyAdapter(),
   );
   //   If remove async, it will throw error like this: Plugin did not start in time: '() => cookie_1.default'.
-  await app.register(async () => fastifyCookie, {
+  await app.register(fastifyCookie, {
     secret: 'my-secret',
   });
   await app.register(helmet);
